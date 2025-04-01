@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  golang-rate-limit:
+    build: .
+    container_name: golang-rate-limit
+    ports:
+      - 8080:8080
