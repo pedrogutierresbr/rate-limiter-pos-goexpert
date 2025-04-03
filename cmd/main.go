@@ -48,5 +48,5 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello friend!\n"))
+	w.Write([]byte("Hello, friend!\n"))
 }
