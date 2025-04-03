@@ -30,8 +30,6 @@ func main() {
 	limitToken := viper.GetInt("RATE_LIMIT_TOKEN")
 	blockTime := viper.GetInt("BLOCK_TIME")
 
-	// fmt.Printf("Limite IP: %d, Limite Token: %d, Tempo de Bloqueio: %d\n", limitIP, limitToken, blockTime)
-
 	rdb := redis.NewClient(&redis.Options{
 		Addr: fmt.Sprintf("%s:%s", viper.GetString("REDIS_HOST"), viper.GetString("REDIS_PORT")),
 	})
@@ -50,5 +48,5 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello, World!\n"))
+	w.Write([]byte("Hello friend!\n"))
 }

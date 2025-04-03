@@ -28,7 +28,7 @@ func (rl *RateLimiter) Allow(ctx context.Context, key string, limit int) bool {
 		fmt.Println("Erro ao incrementar:", err)
 		return false
 	}
-	// log.Printf("Contagem atual para %s: %d", key, count)
+
 	if count == 1 {
 		rl.store.Expire(ctx, key, rl.BlockTime)
 	}
